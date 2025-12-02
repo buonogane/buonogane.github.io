@@ -6,63 +6,67 @@
 <title>Buonogane Blog</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 <style>
+/* Body settings: font, background, text color, line spacing */
 body {
   margin: 0; /* remove default margin */
   font-family: Arial, sans-serif; /* fallback font */
   background: #f5f0e6; /* cream background */
-  color: #222; /* dark text */
+  color: #222; /* dark text color */
   line-height: 1.6; /* spacing between lines */
 }
 
-/* Header styling: main title */
+/* Header styling: main page title */
 .main-header {
   font-family: 'Poppins', sans-serif; /* modern font */
   font-weight: 600; /* semi-bold */
-  font-size: 2rem; /* font size */
-  letter-spacing: 0.05em; /* small spacing between letters */
-  color: #111; /* dark color */
-  text-align: left; /* align to left */
-  padding: 1.5rem 2rem; /* top/bottom and left/right padding */
+  font-size: 2rem; /* header size */
+  letter-spacing: 0.05em; /* spacing between letters */
+  color: #f5f0e6; /* header text color: cream */
+  text-align: left; /* align left */
+  padding: 1.5rem 2rem; /* padding around header */
+  background-color: #111; /* header background: black */
 }
 
-/* Container for the three cards */
+/* Container for cards */
 .cards-container {
-  display: flex; /* arrange cards in flex layout */
+  display: flex; /* flex layout */
   flex-direction: row; /* horizontal layout */
   justify-content: center; /* center horizontally */
-  align-items: flex-start; /* align items to top */
+  align-items: flex-start; /* align items top */
   height: calc(100vh - 100px); /* full viewport minus header/footer */
-  gap: 2rem; /* space between cards */
+  gap: 2rem; /* spacing between cards */
   padding: 2rem; /* container padding */
-  flex-wrap: wrap; /* allow wrapping on smaller screens */
+  flex-wrap: wrap; /* wrap on smaller screens */
 }
 
 /* Individual card styling */
 .card {
-  background: white; /* card color */
-  width: 300px; /* adjustable width */
-  height: 500px; /* adjustable height for portrait */
+  background: white; /* card background */
+  width: 300px; /* card width */
+  height: 500px; /* card height portrait */
   padding: 2rem; /* inside spacing */
   border-radius: 15px; /* rounded corners */
   box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* subtle shadow */
   text-align: center; /* center text */
-  font-family: 'Poppins', sans-serif; /* modern font */
+  font-family: 'Poppins', sans-serif; /* font for card */
   font-weight: 600; /* semi-bold */
-  font-size: 2rem; /* font size */
+  font-size: 2rem; /* text size */
   cursor: pointer; /* pointer on hover */
   transition: transform 0.2s, box-shadow 0.2s; /* smooth hover effect */
-  display: flex; /* flex to center content */
+  display: flex; /* flex for centering content */
   justify-content: center; /* horizontal centering */
   align-items: center; /* vertical centering */
+  text-decoration: none; /* remove underline for links */
+  color: inherit; /* keep text color */
 }
 
-/* Hover effect for cards */
+/* Card hover effect */
 .card:hover {
-  transform: translateY(-5px); /* lift up slightly */
+  transform: translateY(-5px); /* lift card slightly */
   box-shadow: 0 12px 18px rgba(0,0,0,0.2); /* stronger shadow */
 }
 
-/* H2 inside card: remove margin */
+/* Heading inside card */
 .card h2 {
   margin: 0; /* remove default spacing */
   font-size: 2rem; /* heading size */
@@ -70,8 +74,8 @@ body {
 
 /* Footer styling */
 footer {
-  text-align: center; /* center text */
-  padding: 2rem; /* spacing */
+  text-align: center; /* center footer text */
+  padding: 2rem; /* footer spacing */
   background: #111; /* dark background */
   color: white; /* white text */
 }
@@ -92,14 +96,14 @@ footer {
 <body>
 <header class="main-header"><h1>Buonogane's Odyssey</h1></header> <!-- Main page title as H1 -->
 
-<div class="cards-container"> <!-- Main option cards -->
-  <div class="card"><h2>Explorations</h2></div>
-  <div class="card"><h2>Books</h2></div>
-  <div class="card"><h2>Extras</h2></div>
+<div class="cards-container"> <!-- Container for clickable cards -->
+  <a href="explorations.html" class="card"><h2>Explorations</h2></a> <!-- Card link to Explorations -->
+  <a href="books.html" class="card"><h2>Books</h2></a> <!-- Card link to Books -->
+  <a href="extras.html" class="card"><h2>Extras</h2></a> <!-- Card link to Extras -->
 </div>
 
 <footer> <!-- Footer section -->
-<p>© 2025 Buonogane — All rights reserved.</p>
+<p>© 2025 Buonogane — All rights reserved.</p> <!-- Copyright info -->
 </footer>
 </body>
 </html>
