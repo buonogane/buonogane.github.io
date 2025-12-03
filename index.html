@@ -128,6 +128,19 @@ body {
     0px 0px 14px rgba(0,0,0,0.4);
 }
 
+/* On hover → reveal */
+.books-card:hover .hover-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Make sure the card title stays readable */
+.books-card h2 {
+  text-shadow:
+    0px 2px 6px rgba(0,0,0,0.55),
+    0px 0px 14px rgba(0,0,0,0.4);
+}
+  
 /* --- FOOTER --- */
 footer {
   text-align: center; /* Center footer text */
@@ -171,17 +184,22 @@ footer img {
 </header>
 
 <!-- --- CARDS --- -->
-<div class="cards-container"> 
+<div class="cards-container">
+  <!-- explorations card -->
   <a href="explorations.html" class="card explorations-card" style="background-image: url('explore-card.png');">
     <div class="card-content">
       <h2>Explorations</h2>
-    <p class="hover-text">Proof that I do step outside, mostly to get lost in new ways. These wanderings are my slow attempts to understand the world, one wrong turn at a time.</p>
+        <p class="hover-text">Proof that I do step outside, mostly to get lost in new ways. These wanderings are my slow attempts to understand the world, one wrong turn at a time.</p>
     </div>
   </a>
-
-  <a href="books.html" class="card" style="background-image: url('books-card.png');">
-    <h2>Books</h2>
+<!-- books card -->
+  <a href="books.html" class="card books-card" style="background-image: url('books-card.png');">
+    <div class="card-content">
+      <h2>Books</h2>
+        <p class="hover-text">Where my loosely-held thoughts come from. I gather what lingers from each book—small ideas that help me make sense of things, or at least sound thoughtful over dinner.</p>
+    </div>
   </a>
+  <!-- books card -->
   <a href="extras.html" class="card" style="background-image: url('extras-card.png');">
     <h2>Extras</h2>
   </a>
