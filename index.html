@@ -89,6 +89,39 @@ body {
     0px 0px 14px rgba(0,0,0,0.4); /* extra depth for visibility */
 }
 
+/* Container to position the appearing text */
+.card-content {
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Hidden text */
+.hover-text {
+  opacity: 0;
+  margin-top: 1rem;
+  font-size: 1rem;
+  max-width: 80%;
+  color: #fff;
+  line-height: 1.4;
+  text-shadow: 0px 2px 6px rgba(0,0,0,0.6);
+  transition: opacity 0.4s ease, transform 0.3s ease;
+  transform: translateY(10px);
+  pointer-events: none; /* ensure clickable link stays clickable */
+}
+
+/* On hover → reveal */
+.explorations-card:hover .hover-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Make sure the card title stays readable */
+.explorations-card h2 {
+  text-shadow:
+    0px 2px 6px rgba(0,0,0,0.55),
+    0px 0px 14px rgba(0,0,0,0.4);
+}
+
 /* --- FOOTER --- */
 footer {
   text-align: center; /* Center footer text */
@@ -133,9 +166,13 @@ footer img {
 
 <!-- --- CARDS --- -->
 <div class="cards-container"> 
-  <a href="explorations.html" class="card" style="background-image: url('explore-card.png');">
-    <h2>Explorations</h2>
+  <a href="explorations.html" class="card explorations-card" style="background-image: url('explore-card.png');">
+    <div class="card-content">
+      <h2>Explorations</h2>
+    <p class="hover-text">Proof that I do step outside—mostly to get lost in new ways. These wanderings are my slow attempts to understand the world, one wrong turn at a time.</p>
+    </div>
   </a>
+
   <a href="books.html" class="card" style="background-image: url('books-card.png');">
     <h2>Books</h2>
   </a>
