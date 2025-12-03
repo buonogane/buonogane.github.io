@@ -70,20 +70,21 @@ body {
 
 /* --- INDIVIDUAL CARDS --- */
 .card {
-  flex: 1; /* Each card takes equal width */
-  height: 100%; /* Full height of container */
-  display: flex; /* Flex to center content */
-  justify-content: center; /* Horizontal centering */
-  align-items: center; /* Vertical centering */
-  text-decoration: none; /* Remove underline from links */
-  color: white; /* Text color */
-  font-family: 'Poppins', sans-serif; /* Font for card text */
-  font-weight: 600; /* Semi-bold */
-  font-size: 2rem; /* Large text for card title */
-  transition: transform 0.2s, box-shadow 0.2s; /* Smooth hover effect */
-  background-size: cover; /* Background image fills card */
-  background-position: center; /* Center the background image */
-  cursor: pointer; /* Show pointer on hover */
+  position: relative; /* needed for absolute positioning of hover text */
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
 }
 
 /* --- CARD HOVER EFFECT (Shadow pop) --- */
@@ -104,7 +105,7 @@ body {
 
 /* Container to position the appearing text */
 .card-content {
-   position: relative;
+  position: relative;
   width: 100%;
   height: 100%;
 
@@ -114,6 +115,7 @@ body {
   align-items: center;       /* horizontally centered */
 
   text-align: center;
+  z-index: 2; 
   padding: 0 1rem;
   pointer-events: none;       /* keeps the link clickable */
 }
@@ -125,22 +127,19 @@ body {
 
 /* Hidden text */
 .hover-text {
-  opacity: 0;
-  margin-top: 1rem;
-  font-size: 1rem;
+  position: absolute; /* overlay text */
+  bottom: 2rem; /* distance from bottom of card */
+  left: 50%;
+  transform: translateX(-50%);
   max-width: 70%;
-  color: #fff;
-  line-height: 1.4;
+  padding: 0.75rem 1rem;
+  background: rgba(0,0,0,0.2);
+  backdrop-filter: blur(2px);
+  border-radius: 8px;
+  opacity: 0;
   font-weight: 300;
-  text-shadow: 0px 2px 6px rgba(0,0,0,0.6);
+  color: #fff;
   transition: opacity 0.4s ease, transform 0.3s ease;
-  transform: translateY(10px);
-  pointer-events: none; /* ensure clickable link stays clickable */
-  /*testing extra effect*/
-  background: rgba(0,0,0,0.20); /* soft dark tint behind text */
-  backdrop-filter: blur(2px);   /* blur the background */
-  padding: 0.75rem 1rem;        /* spacing around text */
-  border-radius: 8px;           /* soft rounded corners */
 }
 
 /* On hover → reveal */
