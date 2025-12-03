@@ -14,13 +14,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 
 <style>
-/* --- BODY STYLING --- */
+/* --- BODY --- */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #f5f0e6;
   color: #222;
-  line-height: 1.6;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -33,29 +32,25 @@ body {
   font-size: 1rem;
   color: #f5f0e6;
   text-align: left;
-  padding: 2rem;
+  padding: 1rem 2rem; /* smaller vertical padding */
   background-color: #111;
 }
 
 .main-header p {
   font-weight: 300;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   margin-top: 0.5rem;
   color: #f5f0e6;
+  letter-spacing: 0.5px;
 }
 
-/* --- CARDS CONTAINER --- */
+/* --- CARDS --- */
 .cards-container {
   flex: 1;
   display: flex;
-  flex-direction: row;
-  justify-content: stretch;
-  align-items: stretch;
   gap: 0;
-  padding: 0;
 }
 
-/* --- INDIVIDUAL CARDS --- */
 .card {
   position: relative;
   flex: 1;
@@ -73,12 +68,10 @@ body {
   transition: transform 0.2s, filter 0.2s;
 }
 
-/* Card hover effect */
 .card:hover {
   filter: brightness(1.5);
 }
 
-/* Card content */
 .card-content {
   position: relative;
   width: 100%;
@@ -88,41 +81,36 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 0 1rem;
   pointer-events: none;
 }
 
-/* Card title */
 .card-content h2 {
   margin: 0;
   z-index: 2;
-  text-shadow:
-    0px 2px 6px rgba(0,0,0,0.55),
-    0px 0px 14px rgba(0,0,0,0.4);
+  text-shadow: 0px 2px 6px rgba(0,0,0,0.55), 0px 0px 14px rgba(0,0,0,0.4);
 }
 
-/* Card short explanation (below title) */
+/* Hover text */
 .card-content p {
-  position: absolute; /* overlay text */
-  bottom: 1.5rem;     /* distance from bottom of card */
+  position: absolute;
+  bottom: 1.5rem;
   left: 50%;
   transform: translateX(-50%);
-  max-width: 60%;     /* limit width */
+  max-width: 60%;
   padding: 0.5rem 0.75rem;
   background: rgba(0,0,0,0.2);
   backdrop-filter: blur(2px);
   border-radius: 6px;
   opacity: 0;
-  font-weight: 300;
-  font-size: 0.85rem;  /* smaller font */
+  font-weight: 300; /* thinner font */
+  font-size: 0.75rem;
   line-height: 1.3;
+  letter-spacing: 0.5px;
   color: #fff;
   text-align: center;
   transition: opacity 0.4s ease, transform 0.3s ease;
-  pointer-events: none;
 }
 
-/* Reveal explanation on hover */
 .card:hover .card-content p {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
@@ -133,15 +121,14 @@ footer {
   background: #111;
   color: #f5f0e6;
   text-align: center;
-  padding: 2rem;
-  font-size: 1rem;
+  padding: 1rem 2rem; /* smaller vertical padding */
+  font-size: 0.95rem;
   flex-shrink: 0;
 }
 
 footer a {
   color: #f5f0e6;
   margin: 0 0.5rem;
-  display: inline-block;
 }
 
 footer img {
@@ -158,6 +145,10 @@ footer img {
   }
   .card {
     height: 150px;
+  }
+  /* hide hover text on mobile */
+  .card-content p {
+    display: none;
   }
 }
 </style>
