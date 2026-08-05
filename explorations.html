@@ -34,16 +34,41 @@ header a {
   text-decoration: none;
   color: #f5f0e6;
 }
-header p {
+.brand-line {
+  font-size: 1rem;
+}
+.brand-line .tagline {
   font-weight: 300;
   font-size: 0.85rem;
-  margin: 0.4rem 0 0;
   letter-spacing: 0.5px;
+  opacity: 0.85;
+}
+.breadcrumb {
+  font-weight: 300;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  letter-spacing: 0.3px;
+}
+.breadcrumb a {
+  opacity: 0.75;
+}
+.breadcrumb .sep {
+  margin: 0 0.35rem;
+  opacity: 0.5;
 }
 
 main {
   flex: 1;
   padding: 2rem;
+}
+
+.page-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  max-width: 1100px;
+  margin: 0 auto 1.5rem;
+  text-align: left;
 }
 
 .cards-grid {
@@ -151,11 +176,19 @@ footer img {
 <body>
 
 <header>
-  <a href="index.html">Buono's Odyssey</a>
-  <p>Explorations — slow attempts to understand the world, one wrong turn at a time.</p>
+  <div class="brand-line">
+    <a href="index.html">Buono's Odyssey</a>
+    <span class="tagline">— slow attempts to understand the world, one wrong turn at a time.</span>
+  </div>
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span class="sep">/</span>
+    <span>Explorations</span>
+  </div>
 </header>
 
 <main>
+  <h1 class="page-title">Explorations</h1>
   <div class="cards-grid" id="cards-grid"></div>
   <p class="empty-state" id="empty-state" style="display:none;">No entries yet. First wrong turn pending.</p>
 </main>
