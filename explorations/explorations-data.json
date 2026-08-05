@@ -1,0 +1,9 @@
+[
+  {
+    "title": "Sample Entry",
+    "slug": "sample-entry",
+    "cover": "explorations/covers/sample-entry.jpg",
+    "hook": "Replace this with a real entry, then delete it from the array.",
+    "date": "2025-01-01"
+  }
+]
