@@ -6,12 +6,12 @@
 <title>Buono's Odyssey</title>
 
 <!-- SEO Meta Tags -->
-<meta name="description" content="A personal journey of curiosity, wisdom, and creativity. Explore reflections, books, and more at Buono’s Odyssey.">
+<meta name="description" content="A personal journey of curiosity, wisdom, and creativity. Explore reflections, books, and more at Buono's Odyssey.">
 <meta name="keywords" content="Buono, Blog, Explorations, Books, Learning, Personal Journey, Minimalist Blog">
 <meta name="author" content="Buono">
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600&display=swap" rel="stylesheet">
+<!-- Google Font (only weights actually used: 300, 600) -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
 <style>
 /* --- BODY --- */
@@ -32,8 +32,12 @@ body {
   font-size: 1rem;
   color: #f5f0e6;
   text-align: left;
-  padding: 1rem 2rem; /* smaller vertical padding */
+  padding: 1rem 2rem;
   background-color: #111;
+}
+
+.main-header h1 {
+  margin: 0;
 }
 
 .main-header p {
@@ -90,17 +94,16 @@ body {
   text-shadow: 0px 2px 6px rgba(0,0,0,0.55), 0px 0px 14px rgba(0,0,0,0.4);
 }
 
-/* Hover text */
 .card-content p {
-  position: relative;        /* remove absolute positioning */
-  margin-top: 0.25rem;        /* distance below the title */
+  position: relative;
+  margin-top: 0.25rem;
   max-width: 60%;
   padding: 0.4rem 0.6rem;
   background: rgba(0,0,0,0.2);
   backdrop-filter: blur(2px);
   border-radius: 6px;
   opacity: 0;
-  font-weight: 200;          /* thin and modern */
+  font-weight: 300;
   font-size: 0.75rem;
   line-height: 1.3;
   letter-spacing: 0.5px;
@@ -110,7 +113,6 @@ body {
   pointer-events: none;
 }
 
-/* Reveal on hover */
 .card:hover .card-content p {
   opacity: 1;
   transform: translateY(0);
@@ -121,9 +123,13 @@ footer {
   background: #111;
   color: #f5f0e6;
   text-align: center;
-  padding: 1rem 2rem; /* smaller vertical padding */
+  padding: 1rem 2rem;
   font-size: 0.95rem;
   flex-shrink: 0;
+}
+
+footer p {
+  margin: 0.4rem 0;
 }
 
 footer a {
@@ -140,6 +146,9 @@ footer img {
 
 /* --- RESPONSIVE --- */
 @media (max-width: 900px) {
+  .main-header {
+    padding: 0.75rem 1.25rem;
+  }
   .cards-container {
     flex-direction: column;
     height: auto;
@@ -147,9 +156,11 @@ footer img {
   .card {
     height: 150px;
   }
-  /* hide hover text on mobile */
   .card-content p {
     display: none;
+  }
+  footer {
+    padding: 0.75rem 1.25rem;
   }
 }
 </style>
@@ -159,7 +170,7 @@ footer img {
 <!-- HEADER -->
 <header class="main-header">
   <h1>Buono's Odyssey</h1>
-  <p>Zhi zu bu ru, zhi zhi bu dai — a timeless reminder that learning the art of enough is life’s truest journey.</p>
+  <p>Zhi zu bu ru, zhi zhi bu dai — a timeless reminder that learning the art of enough is life's truest journey.</p>
 </header>
 
 <!-- CARDS -->
@@ -189,12 +200,12 @@ footer img {
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2025 Buonogane. We’re only human.</p>
+  <p>© 2025 Buonogane. We're only human.</p>
   <p>
-    <a href="https://www.linkedin.com/in/ganendra-manggala-buono-a58375209/" target="_blank">
+    <a href="https://www.linkedin.com/in/ganendra-manggala-buono-a58375209/" target="_blank" rel="noopener noreferrer">
       <img src="linkedin.png" alt="LinkedIn">
     </a>
-    <a href="https://www.instagram.com/buonogama/?next=%2F&hl=en" target="_blank">
+    <a href="https://www.instagram.com/buonogama/?next=%2F&hl=en" target="_blank" rel="noopener noreferrer">
       <img src="instagram.png" alt="Instagram">
     </a>
   </p>
