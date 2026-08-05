@@ -1,99 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Buono's Explorations</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buono's Odyssey — Explorations</title>
 
-  <style>
-    /* --- BODY AND LAYOUT --- */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f0e6;
-      color: #222;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh; /* full viewport height */
-    }
+<meta name="description" content="Wanderings, wrong turns, and slow attempts to understand the world — the Explorations log at Buono's Odyssey.">
+<meta name="keywords" content="Buono, Explorations, Travel, Journey, Blog">
+<meta name="author" content="Buono">
 
-    /* --- HEADER --- */
-    header {
-      background: #111;
-      color: #f5f0e6;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      text-align: left;
-      padding: 1rem 2rem;
-      flex-shrink: 0;
-    }
-    header a {
-      text-decoration: none;
-      color: #f5f0e6;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
 
-    /* --- MAIN CONTENT --- */
-    main {
-      flex: 1; /* take up remaining space */
-      display: flex;
-      flex-direction: column;
-      justify-content: center; /* vertical centering */
-      align-items: center;    /* horizontal centering */
-      padding: 2rem;
-      text-align: center;
-    }
-    main h1 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-    main p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      line-height: 1.6;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f0e6;
+  color: #222;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
-    /* --- FOOTER --- */
-    footer {
-      background: #111;
-      color: #f5f0e6;
-      text-align: center;
-      padding: 0.5rem 0;
-      flex-shrink: 0;
-      font-size: 0.9rem;
-    }
-    footer a {
-      color: #f5f0e6;
-      margin: 0 0.5rem;
-      display: inline-block;
-    }
-    footer img {
-      width: 20px;
-      height: 20px;
-      vertical-align: middle;
-    }
-  </style>
+header {
+  background: #111;
+  color: #f5f0e6;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  flex-shrink: 0;
+}
+header a {
+  text-decoration: none;
+  color: #f5f0e6;
+}
+header p {
+  font-weight: 300;
+  font-size: 0.85rem;
+  margin: 0.4rem 0 0;
+  letter-spacing: 0.5px;
+}
+
+main {
+  flex: 1;
+  padding: 2rem;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.25rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.3rem;
+  background-size: cover;
+  background-position: center;
+  background-color: #333; /* fallback if cover image missing */
+  transition: filter 0.2s;
+}
+.card:hover {
+  filter: brightness(1.4);
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.05) 60%);
+}
+
+.card-content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  text-align: left;
+  pointer-events: none;
+}
+.card-content h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  text-shadow: 0px 2px 6px rgba(0,0,0,0.55);
+}
+.card-content p {
+  margin: 0.4rem 0 0;
+  font-weight: 300;
+  font-size: 0.75rem;
+  line-height: 1.3;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.card:hover .card-content p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.empty-state {
+  text-align: center;
+  color: #555;
+  font-size: 1rem;
+  padding: 3rem 1rem;
+}
+
+footer {
+  background: #111;
+  color: #f5f0e6;
+  text-align: center;
+  padding: 1rem 2rem;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+footer p {
+  margin: 0.4rem 0;
+}
+footer a {
+  color: #f5f0e6;
+  margin: 0 0.5rem;
+  text-decoration: none;
+}
+footer img {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+@media (max-width: 900px) {
+  header, footer { padding: 0.75rem 1.25rem; }
+  main { padding: 1.25rem; }
+}
+</style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header>
-    <a href="index.html">Buono's Explorations</a>
-  </header>
 
-  <!-- MAIN CONTENT -->
-  <main>
-    <h1>Explorations</h1>
-    <p>Under construction… brains and coffee in progress.</p>
-  </main>
+<header>
+  <a href="index.html">Buono's Odyssey</a>
+  <p>Explorations — slow attempts to understand the world, one wrong turn at a time.</p>
+</header>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Buonogane. All rights reserved. We’re only human.</p>
-    <p>
-      <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><img src="linkedin.png" alt="LinkedIn"></a>
-      <a href="https://www.instagram.com/yourprofile" target="_blank"><img src="instagram.png" alt="Instagram"></a>
-    </p>
-  </footer>
+<main>
+  <div class="cards-grid" id="cards-grid"></div>
+  <p class="empty-state" id="empty-state" style="display:none;">No entries yet. First wrong turn pending.</p>
+</main>
+
+<footer>
+  <p>© 2025 Buonogane. We're only human.</p>
+  <p>
+    <a href="https://www.linkedin.com/in/ganendra-manggala-buono-a58375209/" target="_blank" rel="noopener noreferrer">
+      <img src="linkedin.png" alt="LinkedIn">
+    </a>
+    <a href="https://www.instagram.com/buonogama/?next=%2F&hl=en" target="_blank" rel="noopener noreferrer">
+      <img src="instagram.png" alt="Instagram">
+    </a>
+  </p>
+</footer>
+
+<script>
+fetch('explorations/explorations-data.json')
+  .then(res => {
+    if (!res.ok) throw new Error('data file not found');
+    return res.json();
+  })
+  .then(entries => {
+    const grid = document.getElementById('cards-grid');
+    const empty = document.getElementById('empty-state');
+    if (!entries.length) {
+      empty.style.display = 'block';
+      return;
+    }
+    entries
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .forEach(entry => {
+        const card = document.createElement('a');
+        card.href = `explorations/${entry.slug}.html`;
+        card.className = 'card';
+        card.style.backgroundImage = `url('${entry.cover}')`;
+        card.innerHTML = `
+          <div class="card-content">
+            <h2>${entry.title}</h2>
+            <p>${entry.hook}</p>
+          </div>`;
+        grid.appendChild(card);
+      });
+  })
+  .catch(() => {
+    document.getElementById('empty-state').style.display = 'block';
+  });
+</script>
+
 </body>
 </html>
