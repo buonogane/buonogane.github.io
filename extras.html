@@ -232,7 +232,7 @@ fetch('extras/extras-data.json')
         card.innerHTML = `
           <div class="card-body">
             <h2>${entry.title}</h2>
-            <div class="card-meta">${entry.date}</div>
+            <div class="card-meta">${new Date(entry.date).getFullYear()}</div>
             <p>${entry.description}</p>
           </div>
           <a class="download-btn" href="extras/pdfs/${entry.file}" download>
