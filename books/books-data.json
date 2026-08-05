@@ -4,5 +4,11 @@
     "slug": "midnight-library",
     "hook": "A library between life and death, where every book is a life not lived.",
     "date": "2026-01-01"
+  },
+  {
+    "title": "How to Stop Time",
+    "slug": "how-to-stop-time",
+    "hook": "Discover why surviving centuries means nothing if you are too afraid to truly live in the present.",
+    "date": "2026-02-01"
   }
 ]
