@@ -33,15 +33,19 @@ header a {
   text-decoration: none;
   color: #f5f0e6;
 }
-header .crumb {
+.breadcrumb {
   font-weight: 300;
-  font-size: 0.85rem;
-  margin-top: 0.4rem;
-  display: block;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  letter-spacing: 0.3px;
 }
-header .crumb a {
+.breadcrumb a {
   color: #f5f0e6;
-  opacity: 0.8;
+  opacity: 0.75;
+}
+.breadcrumb .sep {
+  margin: 0 0.35rem;
+  opacity: 0.5;
 }
 
 main {
@@ -118,7 +122,13 @@ footer img {
 
 <header>
   <a href="../index.html">Buono's Odyssey</a>
-  <span class="crumb"><a href="../explorations.html">Explorations</a> / Sample Entry</span>
+  <div class="breadcrumb">
+    <a href="../index.html">Home</a>
+    <span class="sep">/</span>
+    <a href="../explorations.html">Explorations</a>
+    <span class="sep">/</span>
+    <span>Sample Entry</span>
+  </div>
 </header>
 
 <main>
