@@ -2,19 +2,22 @@
   {
     "title": "Curriculum Vitae",
     "date": "2026",
-    "description": "My up-to-date CV - professional experience, education, and skills.",
-    "file": "Buono-CV-2026.pdf"
+    "description": "My up-to-date CV - professional experience, education, and skills. Available upon request.",
+    "isProtected": true,
+    "link": "mailto:buono.gane@gmail.com?subject=CV%20Access%20Request&body=Hi%20Buono,%20I%20would%20like%20to%20request%20a%20copy%20of%20your%20CV."
   },
   {
     "title": "Lebenslauf",
     "date": "2026",
-    "description": "Mein aktueller Lebenslauf - Berufserfahrung, Ausbildung und Fähigkeiten.",
-    "file": "Buono-Lebenslauf-2026.pdf"
+    "description": "Mein aktueller Lebenslauf - Berufserfahrung, Ausbildung und Fähigkeiten. Auf Anfrage erhältlich.",
+    "isProtected": true,
+    "link": "mailto:buono.gane@gmail.com?subject=Lebenslauf%20Anfrage&body=Hallo%20Buono,%20ich%20m%C3%B6chte%20gerne%20einen%20Lebenslauf%20anfordern."
   },
   {
     "title": "SEO & GEO Audit Dashboard",
     "date": "2026",
     "description": "Turns raw crawl data into an actionable SEO and AI-search readiness report.",
-    "file": "Buono-Case-Study-SEO-GEO-Dashboard-2026.pdf"
+    "isProtected": false,
+    "link": "assets/pdf/Buono-Case-Study-SEO-GEO-Dashboard-2026.pdf"
   }
 ]
