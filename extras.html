@@ -228,14 +228,14 @@ fetch('extras/extras-data.json')
     }
     entries
       .sort((a, b) => new Date(b.date) - new Date(a.date))
-      .forEach(entry => {
+            .forEach(entry => {
         const card = document.createElement('div');
         card.className = 'card';
         const year = String(entry.date).slice(0, 4);
         const href = entry.isProtected
           ? entry.link
           : `extras/pdfs/${entry.file}`;
-        const label = entry.buttonLabel || (entry.isProtected ? 'Request' : 'Download');
+        const label = entry.buttonLabel || (entry.isProtected ? 'Ask Permission' : 'Download');
         const dl = entry.isProtected ? '' : ' download';
         card.innerHTML = `
           <div class="card-body">
