@@ -3,17 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Books Notes | Immature Clown</title>
+<title>Books Notes — Immature Clown</title>
 
 <!-- SEO Meta Tags -->
-<meta name="description" content="Distilled book notes, core takeaways, and mental models curated by an Immature Clown.">
+<meta name="description" content="Distilled book notes, core takeaways, and mental models from literature, psychology, and awareness curated by an Immature Clown.">
+<meta name="keywords" content="Immature Clown, Books Notes, The Midnight Library, How to Stop Time, Understanding Nunchi, Book Summaries">
 <meta name="author" content="Immature Clown">
+<link rel="canonical" href="https://buonogane.github.io/books.html">
 
-<!-- Favicons & Social -->
-<link rel="icon" type="image/png" href="gmb-fav-icon.png">
-<link rel="icon" href="assets/03-favicons-app-icons/favicon.ico" sizes="any">
-<link rel="icon" href="assets/03-favicons-app-icons/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="assets/03-favicons-app-icons/apple-touch-icon-180.png">
+<!-- Favicons & App Icons -->
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- OpenGraph / Social Meta Tags -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Immature Clown">
+<meta property="og:url" content="https://buonogane.github.io/books.html">
+<meta property="og:title" content="Books Notes — Immature Clown">
+<meta property="og:description" content="Distilled book notes, core takeaways, and mental models from literature, psychology, and awareness curated by an Immature Clown.">
+<meta property="og:image" content="https://buonogane.github.io/favicon.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Books Notes — Immature Clown">
+<meta name="twitter:description" content="Distilled book notes, core takeaways, and mental models from literature, psychology, and awareness curated by an Immature Clown.">
+<meta name="twitter:image" content="https://buonogane.github.io/favicon.png">
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +35,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
-/* --- DESIGN TOKENS (Shared Brand Palette) --- */
+/* --- DESIGN TOKENS --- */
 :root {
   --bg-primary: #F4F3EF;       /* Off-White */
   --bg-surface: #FFFFFF;
@@ -165,10 +179,10 @@ body {
   margin: 0;
 }
 
-/* --- BOOKS GRID --- */
+/* --- BOOKS GRID (3 Items Side-by-Side Responsive) --- */
 .books-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: clamp(0.9rem, 2vh, 1.35rem);
 }
 
@@ -265,7 +279,6 @@ body {
   align-items: center;
   gap: 0.35rem;
   transition: color 0.2s ease;
-  text-decoration: none;
 }
 
 .read-trigger span {
@@ -277,17 +290,18 @@ body {
   transform: translateX(3px);
 }
 
-/* --- NOTE READER MODAL --- */
+/* --- READER MODAL --- */
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  z-index: 50;
-  background: rgba(26, 27, 30, 0.55);
-  backdrop-filter: blur(6px);
+  background: rgba(26, 27, 30, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 1.25rem;
+  z-index: 50;
+  padding: 1.5rem;
 }
 
 .modal-backdrop.open {
@@ -296,76 +310,75 @@ body {
 
 .modal-panel {
   background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
   border-radius: 24px;
-  max-width: 640px;
   width: 100%;
+  max-width: 560px;
+  padding: clamp(1.5rem, 3.5vh, 2.25rem);
+  box-shadow: 0 32px 64px -16px rgba(26, 27, 30, 0.2);
+  position: relative;
   max-height: 85vh;
   overflow-y: auto;
-  padding: clamp(1.5rem, 4vw, 2.5rem);
-  box-shadow: var(--shadow-md);
-  position: relative;
 }
 
 .modal-close {
   position: absolute;
   top: 1.25rem;
   right: 1.25rem;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid var(--border-subtle);
   background: var(--bg-primary);
-  color: var(--text-primary);
-  font-size: 1.15rem;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  line-height: 1;
   cursor: pointer;
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--text-secondary);
   transition: all 0.2s ease;
 }
 
 .modal-close:hover {
-  background: var(--dark-surface);
-  color: #F4F3EF;
+  background: var(--accent-primary);
+  color: #FFFFFF;
 }
 
 .modal-panel h2 {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 1.65rem;
+  font-size: 1.5rem;
   font-weight: 800;
-  letter-spacing: -0.025em;
-  margin: 0.4rem 0 0.25rem;
+  margin: 0.75rem 0 0.25rem;
 }
 
-.modal-panel .modal-author {
+.modal-author {
   color: var(--text-muted);
   font-size: 0.9rem;
-  margin: 0 0 1.5rem;
+  margin: 0 0 1.25rem;
 }
 
 .modal-panel h3 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.82rem;
+  font-size: 0.95rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--accent-primary);
-  margin: 1.4rem 0 0.6rem;
+  letter-spacing: 0.05em;
+  margin: 1.25rem 0 0.65rem;
 }
 
 .modal-panel ul {
-  margin: 0;
-  padding-left: 1.2rem;
+  padding-left: 1.25rem;
   color: var(--text-secondary);
-  line-height: 1.65;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0;
 }
 
 .modal-panel li {
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.5rem;
 }
 
 .modal-full-action {
-  margin-top: 1.75rem;
+  margin-top: 1.5rem;
   padding-top: 1.25rem;
   border-top: 1px solid var(--border-subtle);
   display: flex;
@@ -376,7 +389,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.55rem 1.1rem;
+  padding: 0.65rem 1.15rem;
   background: var(--dark-surface);
   color: #F4F3EF;
   border-radius: 10px;
@@ -440,7 +453,14 @@ footer p {
   fill: currentColor;
 }
 
-@media (max-width: 720px) {
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 900px) {
+  .books-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
   .books-grid {
     grid-template-columns: 1fr;
   }
@@ -528,74 +548,6 @@ footer p {
       </div>
     </article>
 
-    <!-- 04: Thinking in Systems -->
-    <article class="book-card">
-      <div>
-        <div class="book-meta">
-          <span class="book-tag">Strategy &amp; Systems</span>
-          <span class="book-rating">04</span>
-        </div>
-        <h2 class="book-title">Thinking in Systems</h2>
-        <p class="book-author">Donella H. Meadows</p>
-        <p class="book-takeaway">Behavior is driven by structure, feedback loops, and delays rather than isolated events. Fix the leverage points instead of chasing symptoms.</p>
-      </div>
-      <div class="book-footer">
-        <span class="read-time">6 min summary</span>
-        <button class="read-trigger" data-book="systems">Read notes <span>&rarr;</span></button>
-      </div>
-    </article>
-
-    <!-- 05: Obviously Awesome -->
-    <article class="book-card">
-      <div>
-        <div class="book-meta">
-          <span class="book-tag">Marketing &amp; Craft</span>
-          <span class="book-rating">05</span>
-        </div>
-        <h2 class="book-title">Obviously Awesome</h2>
-        <p class="book-author">April Dunford</p>
-        <p class="book-takeaway">Positioning defines the context that makes a product's value immediately clear to the right buyer before any campaign starts.</p>
-      </div>
-      <div class="book-footer">
-        <span class="read-time">5 min summary</span>
-        <button class="read-trigger" data-book="positioning">Read notes <span>&rarr;</span></button>
-      </div>
-    </article>
-
-    <!-- 06: Good Strategy Bad Strategy -->
-    <article class="book-card">
-      <div>
-        <div class="book-meta">
-          <span class="book-tag">Strategy &amp; Systems</span>
-          <span class="book-rating">06</span>
-        </div>
-        <h2 class="book-title">Good Strategy Bad Strategy</h2>
-        <p class="book-author">Richard Rumelt</p>
-        <p class="book-takeaway">Real strategy is not a list of goals or slogans. It requires an honest diagnosis, a guiding policy, and coherent action.</p>
-      </div>
-      <div class="book-footer">
-        <span class="read-time">7 min summary</span>
-        <button class="read-trigger" data-book="rumelt">Read notes <span>&rarr;</span></button>
-      </div>
-    </article>
-
-    <!-- 07: Four Thousand Weeks -->
-    <article class="book-card">
-      <div>
-        <div class="book-meta">
-          <span class="book-tag">Psychology &amp; Focus</span>
-          <span class="book-rating">07</span>
-        </div>
-        <h2 class="book-title">Four Thousand Weeks</h2>
-        <p class="book-author">Oliver Burkeman</p>
-        <p class="book-takeaway">Efficiency traps create endless busyness. Meaningful output comes from accepting limits and deliberately choosing what to neglect.</p>
-      </div>
-      <div class="book-footer">
-        <span class="read-time">4 min summary</span>
-        <button class="read-trigger" data-book="weeks">Read notes <span>&rarr;</span></button>
-      </div>
-    </article>
-
   </section>
 </main>
 
@@ -620,7 +572,7 @@ footer p {
   <p>© 2026 Immature Clown. Built with curiosity.</p>
   <div class="social-links">
     <a href="https://www.linkedin.com/in/ganendra-manggala-buono-a58375209/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
     </a>
     <a href="https://www.instagram.com/buonogama/?next=%2F&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
@@ -661,46 +613,6 @@ const bookNotesData = {
       'The room is a living ecosystem—its atmosphere changes constantly, and your presence alters it.',
       'Maximum influence comes not from loud assertion, but from processing environmental cues faster and more accurately.',
       'Observational distance protects mental peace by decoupling accurate perception from emotional absorption.'
-    ]
-  },
-  'systems': {
-    tag: 'Strategy & Systems',
-    title: 'Thinking in Systems',
-    author: 'Donella H. Meadows',
-    points: [
-      'A system is an interconnected set of elements coherently organized to achieve a function or purpose.',
-      'Changing elements rarely changes system behavior; altering interconnections and rules produces lasting shifts.',
-      'Delays between action and feedback cause oscillations when operators overreact to short-term signals.'
-    ]
-  },
-  'positioning': {
-    tag: 'Marketing & Craft',
-    title: 'Obviously Awesome',
-    author: 'April Dunford',
-    points: [
-      'Start with your best-fit customers to identify what they actually use as an alternative.',
-      'Isolate unique attributes and translate them into measurable customer value before choosing a market frame.',
-      'Strong positioning reduces friction across sales, copywriting, and product roadmap decisions.'
-    ]
-  },
-  'rumelt': {
-    tag: 'Strategy & Systems',
-    title: 'Good Strategy Bad Strategy',
-    author: 'Richard Rumelt',
-    points: [
-      'Bad strategy relies on fluff, ambition disguised as direction, and failure to face the primary obstacle.',
-      'The kernel of good strategy consists of three parts: diagnosis, guiding policy, and coherent action.',
-      'Focus concentrates scarce resources on a decisive pivot point rather than spreading effort thin.'
-    ]
-  },
-  'weeks': {
-    tag: 'Psychology & Focus',
-    title: 'Four Thousand Weeks',
-    author: 'Oliver Burkeman',
-    points: [
-      'Clearing the inbox faster simply invites more incoming requests; prioritize by value rather than urgency.',
-      'Pay yourself first with time by protecting fixed blocks for deep, non-negotiable work.',
-      'Strategic underachievement means deciding in advance which domains will remain imperfect.'
     ]
   }
 };
