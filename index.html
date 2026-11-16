@@ -3,214 +3,529 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Buono's Odyssey</title>
+<title>Immature Clown</title>
 
 <!-- SEO Meta Tags -->
-<meta name="description" content="A personal journey of curiosity, wisdom, and creativity. Explore reflections, books, and more at Buono's Odyssey.">
-<meta name="keywords" content="Buono, Blog, Explorations, Books, Learning, Personal Journey, Minimalist Blog">
-<meta name="author" content="Buono">
+<meta name="description" content="Distilled book notes, strategic frameworks, and creative experiments by an Immature Clown.">
+<meta name="keywords" content="Immature Clown, Books Notes, Extras, Minimalist Portfolio, Marketing Operations">
+<meta name="author" content="Immature Clown">
 
-<!-- Google Font (only weights actually used: 300, 600) -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-
+<!-- Favicons & Social (Asset Pack: 03-favicons-app-icons & 04-social) -->
 <link rel="icon" type="image/png" href="gmb-fav-icon.png">
+<link rel="icon" href="assets/03-favicons-app-icons/favicon.ico" sizes="any">
+<link rel="icon" href="assets/03-favicons-app-icons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/03-favicons-app-icons/apple-touch-icon-180.png">
+<meta property="og:title" content="Immature Clown">
+<meta property="og:description" content="Distilled book notes, strategic frameworks, and creative experiments by an Immature Clown.">
+<meta property="og:image" content="assets/04-social/og-image_1200x630.png">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
-/* --- BODY --- */
+/* --- DESIGN TOKENS (Brand Palette Integration) --- */
+:root {
+  --bg-primary: #F4F3EF;       /* Off-White */
+  --bg-surface: #FFFFFF;
+  --text-primary: #1A1B1E;     /* Charcoal */
+  --text-secondary: #66686B;   /* Concrete Grey Dark */
+  --text-muted: #8A8C8F;       /* Concrete Grey */
+  --border-subtle: rgba(26, 27, 30, 0.14);
+  --accent-primary: #E62E2D;   /* Signal Red */
+  --accent-yellow: #F2B705;    /* Accent Yellow (Play mode highlight) */
+  --dark-surface: #1A1B1E;     /* Charcoal */
+  --shadow-sm: 0 1px 2px rgba(26, 27, 30, 0.04);
+  --shadow-md: 0 24px 48px -12px rgba(26, 27, 30, 0.08), 0 4px 16px -4px rgba(26, 27, 30, 0.03);
+}
+
+/* --- RESET & BASE --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f5f0e6;
-  color: #222;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-primary);
+  background-image: radial-gradient(rgba(26, 27, 30, 0.14) 0.9px, transparent 0.9px);
+  background-size: 28px 28px;
+  color: var(--text-primary);
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* --- HEADER --- */
-.main-header {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
-  color: #f5f0e6;
-  text-align: left;
-  padding: 1rem 2rem;
-  background-color: #111;
-}
-
-.main-header h1 {
-  margin: 0;
-}
-
-.main-header p {
-  font-weight: 300;
-  font-size: 0.85rem;
-  margin-top: 0.5rem;
-  color: #f5f0e6;
-  letter-spacing: 0.5px;
-}
-
-/* --- CARDS --- */
-.cards-container {
-  flex: 1;
+/* --- TOP NAVIGATION --- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
   display: flex;
-  gap: 0;
-}
-
-.card {
-  position: relative;
-  flex: 1;
-  display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  padding: clamp(0.85rem, 1.5vh, 1.15rem) clamp(1.25rem, 3vw, 2.5rem);
+  background: rgba(244, 243, 239, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
   text-decoration: none;
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 2rem;
-  background-size: cover;
-  background-position: center;
-  cursor: pointer;
-  transition: transform 0.2s, filter 0.2s;
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 1.05rem;
+  letter-spacing: -0.04em;
+  line-height: 1;
 }
 
-.card:hover {
-  filter: brightness(1.5);
+.brand-clown {
+  display: inline-flex;
+  align-items: center;
 }
 
-.card-content {
-  position: relative;
-  width: 100%;
-  height: 100%;
+.brand-red-o {
+  display: inline-block;
+  width: 0.78em;
+  height: 0.78em;
+  border-radius: 50%;
+  background-color: var(--accent-primary);
+  margin: 0 0.04em;
+  transform: translateY(-0.02em);
+}
+
+/* --- HERO STAGE (Viewport-Adaptive for Standard Desktop & Laptop Browsers) --- */
+.hero-stage {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: clamp(1.25rem, 3vh, 2.25rem) clamp(1rem, 2.5vw, 2rem);
+  max-width: 960px;
+  width: 100%;
+  margin: 0 auto;
   text-align: center;
-  pointer-events: none;
 }
 
-.card-content h2 {
-  margin: 0;
-  z-index: 2;
-  text-shadow: 0px 2px 6px rgba(0,0,0,0.55), 0px 0px 14px rgba(0,0,0,0.4);
+.eyebrow-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.32rem 0.85rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: clamp(0.65rem, 1.5vh, 1rem);
 }
 
-.card-content p {
+.eyebrow-badge span.pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+}
+
+.hero-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.85rem, 3.8vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  margin: 0 0 clamp(0.45rem, 1vh, 0.75rem);
+  color: var(--text-primary);
+}
+
+.hero-subtitle {
+  font-size: clamp(0.92rem, 1.3vw, 1.02rem);
+  line-height: 1.55;
+  color: var(--text-secondary);
+  max-width: 500px;
+  margin: 0 0 clamp(1.1rem, 2.5vh, 1.85rem);
+}
+
+/* --- SHOWCASE CONTAINER --- */
+.showcase-frame {
+  width: 100%;
+  max-width: min(720px, 86vw);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: 24px;
+  padding: clamp(0.85rem, 2vh, 1.25rem) clamp(0.85rem, 2vw, 1.25rem) clamp(1.1rem, 2.2vh, 1.65rem);
+  box-shadow: var(--shadow-md);
   position: relative;
-  margin-top: 0.25rem;
-  max-width: 60%;
-  padding: 0.4rem 0.6rem;
-  background: rgba(0,0,0,0.2);
-  backdrop-filter: blur(2px);
-  border-radius: 6px;
-  opacity: 0;
-  font-weight: 300;
-  font-size: 0.75rem;
-  line-height: 1.3;
-  letter-spacing: 0.5px;
-  color: #fff;
-  text-align: center;
-  transition: opacity 0.4s ease, transform 0.3s ease;
-  pointer-events: none;
+  overflow: hidden;
 }
 
-.card:hover .card-content p {
-  opacity: 1;
-  transform: translateY(0);
+svg.clown-scene {
+  width: 100%;
+  height: auto;
+  max-height: clamp(270px, 46vh, 430px);
+  display: block;
+  margin: 0 auto;
+  overflow: visible;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* --- ORGANIC IDLE MOTION --- */
+@keyframes floatIdle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes pulseNose {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.07); }
+}
+
+.silhouette-float {
+  animation: floatIdle 5s ease-in-out infinite;
+}
+
+.clown-nose {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pulseNose 3.5s ease-in-out infinite;
+}
+
+/* --- INTERACTIVE TRIGGERS (BOOKS NOTES & EXTRAS) --- */
+.interactive-group {
+  cursor: pointer;
+  outline: none;
+}
+
+.interactive-group .prop-group {
+  transition: transform 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+  transform-box: fill-box;
+  transform-origin: center bottom;
+}
+
+.interactive-group .cta-card {
+  fill: var(--bg-surface);
+  stroke: var(--border-subtle);
+  stroke-width: 1.5;
+  transition: all 0.25s ease;
+  filter: drop-shadow(0 6px 14px rgba(26, 27, 30, 0.06));
+}
+
+.interactive-group .cta-title {
+  fill: var(--text-primary);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 14.5px;
+  letter-spacing: -0.01em;
+  transition: fill 0.25s ease;
+}
+
+.interactive-group .cta-arrow {
+  fill: var(--accent-primary);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  transition: transform 0.25s ease, fill 0.25s ease;
+}
+
+.interactive-group .cta-sub {
+  fill: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  transition: fill 0.25s ease;
+}
+
+/* Hover & Focus States */
+.interactive-group.left-hand:hover .prop-group,
+.interactive-group.left-hand:focus-visible .prop-group {
+  transform: translateY(-7px) rotate(-2deg);
+}
+
+.interactive-group.right-hand:hover .prop-group,
+.interactive-group.right-hand:focus-visible .prop-group {
+  transform: translateY(-7px) rotate(2deg);
+}
+
+.interactive-group:hover .cta-card,
+.interactive-group:focus-visible .cta-card {
+  fill: var(--dark-surface);
+  stroke: var(--dark-surface);
+  filter: drop-shadow(0 12px 24px rgba(26, 27, 30, 0.16));
+}
+
+.interactive-group:hover .cta-title,
+.interactive-group:focus-visible .cta-title {
+  fill: #F4F3EF;
+}
+
+.interactive-group:hover .cta-sub,
+.interactive-group:focus-visible .cta-sub {
+  fill: #8A8C8F;
+}
+
+.interactive-group:hover .cta-arrow,
+.interactive-group:focus-visible .cta-arrow {
+  fill: var(--accent-yellow);
+  transform: translateX(3px);
+}
+
+.interactive-group:active .prop-group {
+  transform: translateY(-3px) scale(0.98);
 }
 
 /* --- FOOTER --- */
 footer {
-  background: #111;
-  color: #f5f0e6;
-  text-align: center;
-  padding: 1rem 2rem;
-  font-size: 0.95rem;
-  flex-shrink: 0;
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  padding: clamp(0.85rem, 1.5vh, 1.15rem) clamp(1.25rem, 3vw, 2.5rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
 }
 
 footer p {
-  margin: 0.4rem 0;
+  margin: 0;
 }
 
-footer a {
-  color: #f5f0e6;
-  margin: 0 0.5rem;
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
   text-decoration: none;
+  transition: all 0.2s ease;
 }
 
-footer img {
-  width: 20px;
-  height: 20px;
-  vertical-align: middle;
+.social-links a:hover {
+  background: var(--bg-primary);
+  border-color: var(--text-muted);
+  transform: translateY(-1px);
 }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 900px) {
-  .main-header {
-    padding: 0.75rem 1.25rem;
+.social-links svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 680px) {
+  .showcase-frame {
+    max-width: 100%;
+    border-radius: 20px;
   }
-  .cards-container {
-    flex-direction: column;
-    height: auto;
+  svg.clown-scene {
+    max-height: 52vh;
   }
-  .card {
-    height: 150px;
+  .interactive-group .cta-title {
+    font-size: 16px;
   }
-  .card-content p {
-    display: none;
+  .interactive-group .cta-sub {
+    font-size: 12px;
   }
   footer {
-    padding: 0.75rem 1.25rem;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
   }
 }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<header class="main-header">
-  <h1>Buono's Odyssey</h1>
-  <p><i>zhi zu bu ru, zhi zhi bu dai</i> - a timeless reminder that learning the art of enough is life's truest journey.</p>
-</header>
+<!-- TOP NAVIGATION (Brand Wordmark Only) -->
+<nav class="navbar" aria-label="Primary Navigation">
+  <a href="index.html" class="brand" aria-label="Immature Clown Home">
+    <span>IMMATURE</span>
+    <span class="brand-clown">CL<span class="brand-red-o" aria-hidden="true"></span>WN</span>
+  </a>
+</nav>
 
-<!-- CARDS -->
-<div class="cards-container">
-  <!-- Explorations -->
-  <a href="explorations.html" class="card" style="background-image: url('explore-card.png');">
-    <div class="card-content">
-      <h2>Explorations</h2>
-      <p>Proof that I step outside, mostly to get lost in new ways. These wanderings are my slow attempts to understand the world, one wrong turn at a time.</p>
-    </div>
-  </a>
-  <!-- Books -->
-  <a href="books.html" class="card" style="background-image: url('books-card.png');">
-    <div class="card-content">
-      <h2>Books</h2>
-      <p>Where the seeds of my thoughts are planted. I keep whatever stays with me from each book, small reminders that learning takes time.</p>
-    </div>
-  </a>
-  <!-- Extras -->
-  <a href="extras.html" class="card" style="background-image: url('extras-card.png');">
-    <div class="card-content">
-      <h2>Extras</h2>
-      <p>Quiet fragments that explain my love for questions, and oddly specific fascinations.</p>
-    </div>
-  </a>
-</div>
+<!-- HERO STAGE -->
+<main class="hero-stage">
+  <div class="eyebrow-badge">
+    <span class="pulse" aria-hidden="true"></span>
+    <span>Immature Clown · Personal Archive</span>
+  </div>
+
+  <h1 class="hero-title">Serious curiosity.<br>Zero self-importance.</h1>
+  <p class="hero-subtitle">Distilled book notes, marketing systems, and working experiments, curated by an Immature Clown.</p>
+
+  <!-- INTERACTIVE SILHOUETTE SHOWCASE -->
+  <div class="showcase-frame">
+    <svg class="clown-scene" viewBox="0 0 680 390" role="img" aria-label="Editorial silhouette illustration of an Immature Clown featuring the winking face icon mark with a red nose, holding a stack of books on the left for Books Notes and a giant pencil on the right for Extras.">
+      
+      <defs>
+        <!-- Soft Studio Halo in Signal Red & Off-White -->
+        <radialGradient id="noirHalo" cx="50%" cy="46%" r="48%">
+          <stop offset="0%" stop-color="#E62E2D" stop-opacity="0.12" />
+          <stop offset="60%" stop-color="#F4F3EF" stop-opacity="0.65" />
+          <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+        </radialGradient>
+      </defs>
+
+      <!-- Studio Halo & Floor Shadow -->
+      <circle cx="340" cy="195" r="185" fill="url(#noirHalo)" />
+      <ellipse cx="340" cy="366" rx="170" ry="8" fill="#1A1B1E" opacity="0.10" />
+
+      <!-- UNIFIED SILHOUETTE FIGURE -->
+      <g class="silhouette-float">
+
+        <!-- 1. SEAMLESS BODY + SHOULDERS + ARMS + HANDS (Single Unified Charcoal Path) -->
+        <path fill="#1A1B1E" d="
+          M 234,362
+          C 236,330 242,302 252,280
+          C 214,282 180,270 150,248
+          C 141,241 139,231 145,224
+          C 151,217 162,217 171,224
+          C 198,242 228,248 264,240
+          C 272,235 280,231 288,228
+          C 274,224 266,216 270,206
+          C 275,198 290,198 302,200
+          C 308,193 312,184 312,174
+          L 368,174
+          C 368,184 372,193 378,200
+          C 390,198 405,198 410,206
+          C 414,216 406,224 392,228
+          C 400,231 408,235 416,240
+          C 452,248 482,242 509,224
+          C 518,217 529,217 535,224
+          C 541,231 539,241 530,248
+          C 500,270 466,282 428,280
+          C 438,302 444,330 446,362
+          Z
+        " />
+
+        <!-- Subtle Collar & Tunic Buttons (Negative Space Details) -->
+        <path d="M 314,202 L 340,222 L 366,202" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
+        <circle cx="340" cy="256" r="4.5" fill="#FFFFFF" />
+        <circle cx="340" cy="290" r="4.5" fill="#FFFFFF" />
+        <circle cx="340" cy="324" r="4.5" fill="#FFFFFF" />
+
+        <!-- Crisp White Cuff Lines Integrated at Wrists -->
+        <path d="M 173,226 L 164,242" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+        <path d="M 507,226 L 516,242" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+
+        <!-- 2. SEAMLESSLY CONNECTED HEAD (Exact Face Icon Mark) -->
+        <circle cx="340" cy="122" r="64" fill="#1A1B1E" />
+        <circle cx="340" cy="122" r="43" fill="#FFFFFF" />
+
+        <!-- Left Eye: Horizontal Pill / Dash -->
+        <line x1="312" y1="108" x2="324" y2="108" stroke="#1A1B1E" stroke-width="8.5" stroke-linecap="round" />
+
+        <!-- Right Eye: Happy Inverted-V Wink Chevron -->
+        <path d="M 355,111 Q 362,101 369,111" fill="none" stroke="#1A1B1E" stroke-width="8.5" stroke-linecap="round" stroke-linejoin="round" />
+
+        <!-- Center Signal Red Nose -->
+        <circle class="clown-nose" cx="340" cy="124" r="11.5" fill="#E62E2D" />
+
+        <!-- Thick Curved U-Smile -->
+        <path d="M 321,143 Q 340,156 359,143" fill="none" stroke="#1A1B1E" stroke-width="8.5" stroke-linecap="round" />
+
+        <!-- 3. LEFT INTERACTIVE TRIGGER: BOOKS NOTES -->
+        <a href="books.html" class="interactive-group left-hand" aria-label="Books Notes: Key takeaways and reading reflections">
+          <g class="prop-group">
+            <!-- Bottom Book resting flush on left hand -->
+            <rect x="86" y="198" width="124" height="21" rx="4" fill="#1A1B1E" />
+            <rect x="96" y="203" width="104" height="2.5" rx="1.2" fill="#F4F3EF" opacity="0.4" />
+            <rect x="96" y="210" width="82" height="2.5" rx="1.2" fill="#F4F3EF" opacity="0.4" />
+
+            <!-- Middle Book -->
+            <rect x="92" y="175" width="120" height="21" rx="4" fill="#F4F3EF" stroke="#1A1B1E" stroke-width="2.2" />
+            <line x1="102" y1="182" x2="198" y2="182" stroke="#8A8C8F" stroke-width="2" stroke-linecap="round" />
+            <line x1="102" y1="189" x2="178" y2="189" stroke="#8A8C8F" stroke-width="2" stroke-linecap="round" />
+
+            <!-- Top Book -->
+            <g transform="rotate(-4 150 162)">
+              <rect x="90" y="152" width="116" height="21" rx="4" fill="#E62E2D" />
+              <rect x="100" y="158" width="90" height="2.5" rx="1.2" fill="#FFFFFF" opacity="0.85" />
+            </g>
+          </g>
+
+          <!-- Clean UI Action Card -->
+          <g transform="translate(144, 302)">
+            <rect class="cta-card" x="-86" y="-22" width="172" height="58" rx="12" />
+            <text class="cta-title" x="-8" y="0" text-anchor="middle">Books Notes</text>
+            <text class="cta-arrow" x="54" y="0" text-anchor="middle">&#8594;</text>
+            <text class="cta-sub" x="0" y="20" text-anchor="middle">Reading distilled</text>
+          </g>
+        </a>
+
+        <!-- 4. RIGHT INTERACTIVE TRIGGER: EXTRAS -->
+        <a href="extras.html" class="interactive-group right-hand" aria-label="Extras: Case studies, frameworks, and downloads">
+          <g class="prop-group">
+            <!-- Oversized Graphic Pencil held cleanly through right hand -->
+            <g transform="rotate(24 524 216)">
+              <!-- Signal Red Eraser -->
+              <rect x="510" y="94" width="28" height="20" rx="5" fill="#E62E2D" />
+              <!-- Off-White Ferrule -->
+              <rect x="510" y="111" width="28" height="10" fill="#F4F3EF" stroke="#1A1B1E" stroke-width="1.5" />
+              <!-- Brand Charcoal Barrel -->
+              <rect x="510" y="121" width="28" height="120" fill="#1A1B1E" />
+              <line x1="519" y1="127" x2="519" y2="235" stroke="#F4F3EF" stroke-width="1.8" opacity="0.25" stroke-linecap="round" />
+              <line x1="529" y1="127" x2="529" y2="235" stroke="#F4F3EF" stroke-width="1.8" opacity="0.25" stroke-linecap="round" />
+              <!-- Off-White Sharpened Cone -->
+              <polygon points="510,241 538,241 524,274" fill="#F4F3EF" stroke="#1A1B1E" stroke-width="2.2" stroke-linejoin="round" />
+              <!-- Charcoal Graphite Tip -->
+              <polygon points="518,261 530,261 524,274" fill="#1A1B1E" />
+            </g>
+
+            <!-- Front Fingers Wrapping Over Pencil Shaft -->
+            <ellipse cx="523" cy="231" rx="14" ry="8.5" transform="rotate(-28 523 231)" fill="#1A1B1E" />
+          </g>
+
+          <!-- Clean UI Action Card -->
+          <g transform="translate(536, 302)">
+            <rect class="cta-card" x="-86" y="-22" width="172" height="58" rx="12" />
+            <text class="cta-title" x="-8" y="0" text-anchor="middle">Extras</text>
+            <text class="cta-arrow" x="42" y="0" text-anchor="middle">&#8594;</text>
+            <text class="cta-sub" x="0" y="20" text-anchor="middle">Projects &amp; frameworks</text>
+          </g>
+        </a>
+
+      </g>
+    </svg>
+  </div>
+</main>
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2025 Buono. We're only human.</p>
-  <p>
-    <a href="https://www.linkedin.com/in/ganendra-manggala-buono-a58375209/" target="_blank" rel="noopener noreferrer">
-      <img src="linkedin.png" alt="LinkedIn">
+  <p>© 2026 Immature Clown. Built with curiosity.</p>
+  <div class="social-links">
+    <a href="https://www.linkedin.com/in/ganendra-manggala-buono-a58375209/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
     </a>
-    <a href="https://www.instagram.com/buonogama/?next=%2F&hl=en" target="_blank" rel="noopener noreferrer">
-      <img src="instagram.png" alt="Instagram">
+    <a href="https://www.instagram.com/buonogama/?next=%2F&hl=en" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8 1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg>
     </a>
-  </p>
+  </div>
 </footer>
 
 </body>
