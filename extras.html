@@ -3,17 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Extras | Immature Clown</title>
+<title>Extras — Immature Clown</title>
 
 <!-- SEO Meta Tags -->
 <meta name="description" content="Working frameworks, professional dossiers, and downloadable project case studies curated by an Immature Clown.">
+<meta name="keywords" content="Immature Clown, Extras, CV, Curriculum Vitae, Lebenslauf, SEO GEO Audit Dashboard, Marketing Frameworks">
 <meta name="author" content="Immature Clown">
+<link rel="canonical" href="https://buonogane.github.io/extras.html">
 
-<!-- Favicons & Social -->
-<link rel="icon" type="image/png" href="gmb-fav-icon.png">
-<link rel="icon" href="assets/03-favicons-app-icons/favicon.ico" sizes="any">
-<link rel="icon" href="assets/03-favicons-app-icons/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="assets/03-favicons-app-icons/apple-touch-icon-180.png">
+<!-- Favicons & App Icons -->
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- OpenGraph / Social Meta Tags -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Immature Clown">
+<meta property="og:url" content="https://buonogane.github.io/extras.html">
+<meta property="og:title" content="Extras — Immature Clown">
+<meta property="og:description" content="Working frameworks, professional dossiers, and downloadable project case studies curated by an Immature Clown.">
+<meta property="og:image" content="https://buonogane.github.io/favicon.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Extras — Immature Clown">
+<meta name="twitter:description" content="Working frameworks, professional dossiers, and downloadable project case studies curated by an Immature Clown.">
+<meta name="twitter:image" content="https://buonogane.github.io/favicon.png">
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +35,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
-/* --- DESIGN TOKENS (Shared Brand Palette) --- */
+/* --- DESIGN TOKENS --- */
 :root {
   --bg-primary: #F4F3EF;       /* Off-White */
   --bg-surface: #FFFFFF;
@@ -165,10 +179,10 @@ body {
   margin: 0;
 }
 
-/* --- EXTRAS GRID --- */
+/* --- EXTRAS GRID (3 Items Side-by-Side Responsive) --- */
 .extras-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: clamp(0.9rem, 2vh, 1.35rem);
 }
 
@@ -324,7 +338,14 @@ footer p {
   fill: currentColor;
 }
 
-@media (max-width: 720px) {
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 900px) {
+  .extras-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
   .extras-grid {
     grid-template-columns: 1fr;
   }
