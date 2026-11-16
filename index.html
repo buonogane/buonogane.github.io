@@ -1,23 +1,33 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Immature Clown</title>
+<title>Immature Clown — Serious Curiosity, Zero Self-Importance</title>
 
 <!-- SEO Meta Tags -->
 <meta name="description" content="Distilled book notes, strategic frameworks, and creative experiments by an Immature Clown.">
 <meta name="keywords" content="Immature Clown, Books Notes, Extras, Minimalist Portfolio, Marketing Operations">
 <meta name="author" content="Immature Clown">
+<link rel="canonical" href="https://buonogane.github.io/">
 
-<!-- Favicons & Social (Asset Pack: 03-favicons-app-icons & 04-social) -->
-<link rel="icon" type="image/png" href="gmb-fav-icon.png">
-<link rel="icon" href="assets/03-favicons-app-icons/favicon.ico" sizes="any">
-<link rel="icon" href="assets/03-favicons-app-icons/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="assets/03-favicons-app-icons/apple-touch-icon-180.png">
-<meta property="og:title" content="Immature Clown">
+<!-- Favicons & App Icons -->
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+<!-- OpenGraph / Social Meta Tags -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Immature Clown">
+<meta property="og:url" content="https://buonogane.github.io/">
+<meta property="og:title" content="Immature Clown — Serious Curiosity, Zero Self-Importance">
 <meta property="og:description" content="Distilled book notes, strategic frameworks, and creative experiments by an Immature Clown.">
-<meta property="og:image" content="assets/04-social/og-image_1200x630.png">
+<meta property="og:image" content="https://buonogane.github.io/favicon.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Immature Clown — Serious Curiosity, Zero Self-Importance">
+<meta name="twitter:description" content="Distilled book notes, strategic frameworks, and creative experiments by an Immature Clown.">
+<meta name="twitter:image" content="https://buonogane.github.io/favicon.png">
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,22 +35,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800;900&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
-/* --- DESIGN TOKENS (Brand Palette Integration) --- */
+/* --- DESIGN TOKENS --- */
 :root {
-  --bg-primary: #F4F3EF;       /* Off-White */
+  --bg-primary: #F4F3EF;
   --bg-surface: #FFFFFF;
-  --text-primary: #1A1B1E;     /* Charcoal */
-  --text-secondary: #66686B;   /* Concrete Grey Dark */
-  --text-muted: #8A8C8F;       /* Concrete Grey */
+  --text-primary: #1A1B1E;
+  --text-secondary: #66686B;
+  --text-muted: #8A8C8F;
   --border-subtle: rgba(26, 27, 30, 0.14);
-  --accent-primary: #E62E2D;   /* Signal Red */
-  --accent-yellow: #F2B705;    /* Accent Yellow (Play mode highlight) */
-  --dark-surface: #1A1B1E;     /* Charcoal */
+  --accent-primary: #E62E2D;
+  --accent-yellow: #F2B705;
+  --dark-surface: #1A1B1E;
   --shadow-sm: 0 1px 2px rgba(26, 27, 30, 0.04);
   --shadow-md: 0 24px 48px -12px rgba(26, 27, 30, 0.08), 0 4px 16px -4px rgba(26, 27, 30, 0.03);
 }
 
-/* --- RESET & BASE --- */
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -106,7 +115,7 @@ body {
   transform: translateY(-0.02em);
 }
 
-/* --- HERO STAGE (Viewport-Adaptive for Standard Desktop & Laptop Browsers) --- */
+/* --- HERO STAGE --- */
 .hero-stage {
   flex: 1;
   display: flex;
@@ -205,7 +214,7 @@ svg.clown-scene {
   animation: pulseNose 3.5s ease-in-out infinite;
 }
 
-/* --- INTERACTIVE TRIGGERS (BOOKS NOTES & EXTRAS) --- */
+/* --- INTERACTIVE TRIGGERS --- */
 .interactive-group {
   cursor: pointer;
   outline: none;
@@ -360,7 +369,7 @@ footer p {
 </head>
 <body>
 
-<!-- TOP NAVIGATION (Brand Wordmark Only) -->
+<!-- TOP NAVIGATION -->
 <nav class="navbar" aria-label="Primary Navigation">
   <a href="index.html" class="brand" aria-label="Immature Clown Home">
     <span>IMMATURE</span>
@@ -383,7 +392,6 @@ footer p {
     <svg class="clown-scene" viewBox="0 0 680 390" role="img" aria-label="Editorial silhouette illustration of an Immature Clown featuring the winking face icon mark with a red nose, holding a stack of books on the left for Books Notes and a giant pencil on the right for Extras.">
       
       <defs>
-        <!-- Soft Studio Halo in Signal Red & Off-White -->
         <radialGradient id="noirHalo" cx="50%" cy="46%" r="48%">
           <stop offset="0%" stop-color="#E62E2D" stop-opacity="0.12" />
           <stop offset="60%" stop-color="#F4F3EF" stop-opacity="0.65" />
@@ -398,7 +406,7 @@ footer p {
       <!-- UNIFIED SILHOUETTE FIGURE -->
       <g class="silhouette-float">
 
-        <!-- 1. SEAMLESS BODY + SHOULDERS + ARMS + HANDS (Single Unified Charcoal Path) -->
+        <!-- 1. SEAMLESS BODY + SHOULDERS + ARMS + HANDS -->
         <path fill="#1A1B1E" d="
           M 234,362
           C 236,330 242,302 252,280
@@ -423,17 +431,17 @@ footer p {
           Z
         " />
 
-        <!-- Subtle Collar & Tunic Buttons (Negative Space Details) -->
+        <!-- Subtle Collar & Tunic Buttons -->
         <path d="M 314,202 L 340,222 L 366,202" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
         <circle cx="340" cy="256" r="4.5" fill="#FFFFFF" />
         <circle cx="340" cy="290" r="4.5" fill="#FFFFFF" />
         <circle cx="340" cy="324" r="4.5" fill="#FFFFFF" />
 
-        <!-- Crisp White Cuff Lines Integrated at Wrists -->
+        <!-- Crisp White Cuff Lines -->
         <path d="M 173,226 L 164,242" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
         <path d="M 507,226 L 516,242" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
 
-        <!-- 2. SEAMLESSLY CONNECTED HEAD (Exact Face Icon Mark) -->
+        <!-- 2. SEAMLESSLY CONNECTED HEAD -->
         <circle cx="340" cy="122" r="64" fill="#1A1B1E" />
         <circle cx="340" cy="122" r="43" fill="#FFFFFF" />
 
@@ -452,24 +460,20 @@ footer p {
         <!-- 3. LEFT INTERACTIVE TRIGGER: BOOKS NOTES -->
         <a href="books.html" class="interactive-group left-hand" aria-label="Books Notes: Key takeaways and reading reflections">
           <g class="prop-group">
-            <!-- Bottom Book resting flush on left hand -->
             <rect x="86" y="198" width="124" height="21" rx="4" fill="#1A1B1E" />
             <rect x="96" y="203" width="104" height="2.5" rx="1.2" fill="#F4F3EF" opacity="0.4" />
             <rect x="96" y="210" width="82" height="2.5" rx="1.2" fill="#F4F3EF" opacity="0.4" />
 
-            <!-- Middle Book -->
             <rect x="92" y="175" width="120" height="21" rx="4" fill="#F4F3EF" stroke="#1A1B1E" stroke-width="2.2" />
             <line x1="102" y1="182" x2="198" y2="182" stroke="#8A8C8F" stroke-width="2" stroke-linecap="round" />
             <line x1="102" y1="189" x2="178" y2="189" stroke="#8A8C8F" stroke-width="2" stroke-linecap="round" />
 
-            <!-- Top Book -->
             <g transform="rotate(-4 150 162)">
               <rect x="90" y="152" width="116" height="21" rx="4" fill="#E62E2D" />
               <rect x="100" y="158" width="90" height="2.5" rx="1.2" fill="#FFFFFF" opacity="0.85" />
             </g>
           </g>
 
-          <!-- Clean UI Action Card -->
           <g transform="translate(144, 302)">
             <rect class="cta-card" x="-86" y="-22" width="172" height="58" rx="12" />
             <text class="cta-title" x="-8" y="0" text-anchor="middle">Books Notes</text>
@@ -481,27 +485,19 @@ footer p {
         <!-- 4. RIGHT INTERACTIVE TRIGGER: EXTRAS -->
         <a href="extras.html" class="interactive-group right-hand" aria-label="Extras: Case studies, frameworks, and downloads">
           <g class="prop-group">
-            <!-- Oversized Graphic Pencil held cleanly through right hand -->
             <g transform="rotate(24 524 216)">
-              <!-- Signal Red Eraser -->
               <rect x="510" y="94" width="28" height="20" rx="5" fill="#E62E2D" />
-              <!-- Off-White Ferrule -->
               <rect x="510" y="111" width="28" height="10" fill="#F4F3EF" stroke="#1A1B1E" stroke-width="1.5" />
-              <!-- Brand Charcoal Barrel -->
               <rect x="510" y="121" width="28" height="120" fill="#1A1B1E" />
               <line x1="519" y1="127" x2="519" y2="235" stroke="#F4F3EF" stroke-width="1.8" opacity="0.25" stroke-linecap="round" />
               <line x1="529" y1="127" x2="529" y2="235" stroke="#F4F3EF" stroke-width="1.8" opacity="0.25" stroke-linecap="round" />
-              <!-- Off-White Sharpened Cone -->
               <polygon points="510,241 538,241 524,274" fill="#F4F3EF" stroke="#1A1B1E" stroke-width="2.2" stroke-linejoin="round" />
-              <!-- Charcoal Graphite Tip -->
               <polygon points="518,261 530,261 524,274" fill="#1A1B1E" />
             </g>
 
-            <!-- Front Fingers Wrapping Over Pencil Shaft -->
             <ellipse cx="523" cy="231" rx="14" ry="8.5" transform="rotate(-28 523 231)" fill="#1A1B1E" />
           </g>
 
-          <!-- Clean UI Action Card -->
           <g transform="translate(536, 302)">
             <rect class="cta-card" x="-86" y="-22" width="172" height="58" rx="12" />
             <text class="cta-title" x="-8" y="0" text-anchor="middle">Extras</text>
